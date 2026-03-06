@@ -8,8 +8,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
             (function(){ 
-    emailjs.init('jqQqvpBIa4s2hB1d4');
-})();
+                emailjs.init('jnOqwRyaBk8zHBi84');
+            })();
         </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -94,25 +94,30 @@
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 absolute w-full">
-            <div class="px-6 py-8 space-y-6 flex flex-col items-center">
-                <a href="#about" class="text-sm font-light tracking-widest uppercase hover:text-klein-blue dark:hover:text-electric-blue transition-colors">关于</a>
-                <a href="#works" class="text-sm font-light tracking-widest uppercase hover:text-klein-blue dark:hover:text-electric-blue transition-colors">作品</a>
-                <a href="#videos" class="text-sm font-light tracking-widest uppercase hover:text-klein-blue dark:hover:text-electric-blue transition-colors">衍生</a>
-                <a href="#contact" class="text-sm font-light tracking-widest uppercase hover:text-klein-blue dark:hover:text-electric-blue transition-colors">联系</a>
-            </div>
-        </div>
     </nav>
-    <section id="hero" class="relative min-h-screen overflow-hidden bg-white dark:bg-black flex flex-col justify-end pb-10 px-8 lg:px-14">
+    
+    <!-- 移动端弹窗菜单 -->
+    <div id="mobile-menu-modal" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-6">
+        <button onclick="closeMobileMenu()" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <div class="flex flex-col items-center space-y-8">
+            <a href="#about" onclick="closeMobileMenu()" class="text-2xl font-light tracking-widest uppercase text-white hover:text-gray-300 transition-colors">关于</a>
+            <a href="#works" onclick="closeMobileMenu()" class="text-2xl font-light tracking-widest uppercase text-white hover:text-gray-300 transition-colors">作品</a>
+            <a href="#videos" onclick="closeMobileMenu()" class="text-2xl font-light tracking-widest uppercase text-white hover:text-gray-300 transition-colors">衍生</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="text-2xl font-light tracking-widest uppercase text-white hover:text-gray-300 transition-colors">联系</a>
+        </div>
+    </div>
+    <section id="hero" class="relative min-h-screen overflow-hidden bg-white dark:bg-black flex flex-col justify-center pb-20 px-8 lg:px-14">
         <!-- Full-width title -->
         <div class="w-full">
-            <h1 class="font-black uppercase text-black dark:text-white w-full" style="font-size: clamp(60px, 12vw, 180px); line-height: 0.88; letter-spacing: -0.02em; white-space: nowrap;">
+            <h1 class="font-black uppercase text-black dark:text-white w-full" style="font-size: clamp(40px, 12vw, 180px); line-height: 0.88; letter-spacing: -0.02em;">
                 PERSONAL PROFILE
             </h1>
-            <p class="font-black uppercase text-black dark:text-white mt-4" style="font-size: clamp(28px, 5vw, 72px); letter-spacing: 0.05em;">AMANDA</p>
+            <p class="font-black uppercase text-black dark:text-white mt-8" style="font-size: clamp(28px, 5vw, 72px); letter-spacing: 0.05em;">AMANDA</p>
         </div>
     </section>
-    <section id="about" class="bg-white dark:bg-black transition-colors duration-500 min-h-screen flex flex-col px-8 lg:px-20 pt-20 pb-6">
+    <section id="about" class="bg-white dark:bg-black transition-colors duration-500 min-h-screen flex flex-col lg:px-8 xl:px-20 pt-20 pb-6">
         <!-- 图片展示区 - 左侧固定区域，加大尺寸 -->
         <div class="mb-0">
             <div class="relative overflow-hidden" style="width: 520px; height: 420px;">
@@ -122,7 +127,7 @@
         </div>
 
         <!-- 第一个黑框 - 个人简介和统计信息，高度加大 -->
-        <div class="bg-black text-white dark:bg-white dark:text-black px-8 pt-6 flex flex-col" style="width: 100%; min-height: 320px;">
+        <div class="bg-black text-white dark:bg-white dark:text-black px-8 pt-6 pb-4 flex flex-col" style="width: 100%; min-height: 320px;">
             <p class="text-lg font-light leading-relaxed">6年高端订制化妆经验，4年专业妆造形象讲师，长期为多位网红博主及内容创作者提供固定妆造合作服务。
 
 同时长期运营个人自媒体账号，分享专业化妆技巧、审美趋势与实用干货，积累了稳定的粉丝群体；线下针对不同基础的学员提供定制化教学方案，从基础技巧到完整妆容设计思维进行系统化教学，帮助学员快速提升审美与实操能力。
@@ -150,17 +155,17 @@
             </div>
         </div>
     </section>
-    <section id="works" class="py-32 px-8 lg:px-20 bg-white dark:bg-black transition-colors duration-500">
+    <section id="works" class="py-32 lg:px-8 xl:px-20 bg-white dark:bg-black transition-colors duration-500">
         <div class="w-full">
             <!-- 水平滚动的作品展示 -->
-            <div class="p-6 rounded-sm relative">
+            <div class="lg:p-6 rounded-sm relative">
                 <!-- 左箭头 -->
                 <button class="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black/50 dark:bg-white/50 text-white dark:text-black rounded-full flex items-center justify-center hover:bg-black/80 dark:hover:bg-white/80 transition-all duration-300 z-10" onclick="scrollGallery(-1)">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
                 
-                <div class="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide" style="scrollbar-width: none; -ms-overflow-style: none;" id="gallery-scroll">
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                <div class="flex space-x-4 overflow-x-auto pb-8 scrollbar-hide" style="scrollbar-width: none; -ms-overflow-style: none; scroll-snap-type: x mandatory;" id="gallery-scroll">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/生活妆造1.jpg" alt="生活妆造" class="w-full h-full object-cover">
                         </div>
@@ -168,7 +173,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">生活妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/定制妆造1.jpg" alt="定制妆造" class="w-full h-full object-cover">
                         </div>
@@ -176,7 +181,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">定制妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/生活妆造2.jpg" alt="生活妆造" class="w-full h-full object-cover">
                         </div>
@@ -184,7 +189,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">生活妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/生活妆造3.jpg" alt="生活妆造" class="w-full h-full object-cover">
                         </div>
@@ -192,7 +197,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">生活妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/定制妆造2.jpg" alt="定制妆造" class="w-full h-full object-cover">
                         </div>
@@ -200,7 +205,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">定制妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/定制妆造3.jpg" alt="定制妆造" class="w-full h-full object-cover">
                         </div>
@@ -208,7 +213,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">定制妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/生活妆造4.jpg" alt="生活妆造" class="w-full h-full object-cover">
                         </div>
@@ -216,7 +221,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">生活妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item life group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/生活妆造5.jpg" alt="生活妆造" class="w-full h-full object-cover">
                         </div>
@@ -224,7 +229,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">生活妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/定制妆造4.jpg" alt="定制妆造" class="w-full h-full object-cover">
                         </div>
@@ -232,7 +237,7 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">定制妆造</p>
                         </div>
                     </div>
-                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                    <div class="flex-shrink-0 w-64 md:w-80 lg:w-96 gallery-item custom group relative overflow-hidden cursor-pointer" onclick="openLightbox(this)" style="scroll-snap-align: start;">
                         <div class="aspect-[3/4] overflow-hidden image-hover-zoom">
                             <img src="images/定制妆造5.jpg" alt="定制妆造" class="w-full h-full object-cover">
                         </div>
@@ -240,6 +245,10 @@
                             <p class="text-white text-xs tracking-widest uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">定制妆造</p>
                         </div>
                     </div>
+                </div>
+                
+                <!-- 小圆点指示器 -->
+                <div class="flex justify-center space-x-2 mt-4" id="gallery-indicators">
                 </div>
                 
                 <!-- 右箭头 -->
@@ -295,34 +304,36 @@
             </div>
         </div>
     </section>
-    <!-- 女娲阿老师弹出页面 -->
+    <!-- 线上弹出页面 -->
     <div id="tutorial-modal" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4">
         <button onclick="closeTutorial()" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-10">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
         <div class="w-full max-w-6xl">
             <h3 class="text-2xl font-bold text-white mb-8 text-center">线上</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- 视频封面 1 -->
-                <div class="group cursor-pointer" onclick="window.open('https://www.douyin.com/user/self?from_tab_name=main&modal_id=7426629344786681124&showSubTab=video&showTab=post', '_blank')">
-                    <div class="aspect-[9/16] overflow-hidden bg-gray-800">
-                        <img src="images/跳转1.jpg" alt="氛围感大女主妆教" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <div class="overflow-x-auto pb-4">
+                <div class="flex space-x-4 min-w-max">
+                    <!-- 视频封面 1 -->
+                    <div class="flex-shrink-0 w-64 group cursor-pointer" onclick="window.open('https://www.douyin.com/user/self?from_tab_name=main&modal_id=7426629344786681124&showSubTab=video&showTab=post', '_blank')">
+                        <div class="aspect-[9/16] overflow-hidden bg-gray-800">
+                            <img src="images/跳转1.jpg" alt="氛围感大女主妆教" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <p class="text-white mt-4 text-center">氛围感大女主妆教</p>
                     </div>
-                    <p class="text-white mt-4 text-center">氛围感大女主妆教</p>
-                </div>
-                <!-- 视频封面 2 -->
-                <div class="group cursor-pointer" onclick="window.open('https://www.xiaohongshu.com/explore/6895e6b600000000230231bc?xsec_token=ABbMLv182yJpG6tUwTXSpyr6dJKBi8MMzL_M9z35C__6M=&xsec_source=pc_user', '_blank')">
-                    <div class="aspect-[9/16] overflow-hidden bg-gray-800">
-                        <img src="images/跳转2.jpg" alt="韩女漫感妆教" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <!-- 视频封面 2 -->
+                    <div class="flex-shrink-0 w-64 group cursor-pointer" onclick="window.open('https://www.xiaohongshu.com/explore/6895e6b600000000230231bc?xsec_token=ABbMLv182yJpG6tUwTXSpyr6dJKBi8MMzL_M9z35C__6M=&xsec_source=pc_user', '_blank')">
+                        <div class="aspect-[9/16] overflow-hidden bg-gray-800">
+                            <img src="images/跳转2.jpg" alt="韩女漫感妆教" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <p class="text-white mt-4 text-center">韩女漫感妆教</p>
                     </div>
-                    <p class="text-white mt-4 text-center">韩女漫感妆教</p>
-                </div>
-                <!-- 视频封面 3 -->
-                <div class="group cursor-pointer" onclick="window.open('https://www.douyin.com/user/self?from_tab_name=main&modal_id=7518465664438177084&showSubTab=compilation&showTab=post', '_blank')">
-                    <div class="aspect-[9/16] overflow-hidden bg-gray-800">
-                        <img src="images/跳转3.jpg" alt="混血感纯欲妆教" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <!-- 视频封面 3 -->
+                    <div class="flex-shrink-0 w-64 group cursor-pointer" onclick="window.open('https://www.douyin.com/user/self?from_tab_name=main&modal_id=7518465664438177084&showSubTab=compilation&showTab=post', '_blank')">
+                        <div class="aspect-[9/16] overflow-hidden bg-gray-800">
+                            <img src="images/跳转3.jpg" alt="混血感纯欲妆教" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <p class="text-white mt-4 text-center">混血感纯欲妆教</p>
                     </div>
-                    <p class="text-white mt-4 text-center">混血感纯欲妆教</p>
                 </div>
             </div>
         </div>
@@ -333,11 +344,11 @@
         <button onclick="closeTeaching()" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-10">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <div class="w-full max-w-6xl">
+        <div class="w-full max-w-6xl overflow-y-auto max-h-[80vh]">
             <h3 class="text-2xl font-bold text-white mb-8 text-center">线下</h3>
             <div class="space-y-12">
                 <!-- 教学展示 1 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center space-y-6 md:space-y-0">
                     <div class="aspect-video overflow-hidden bg-gray-800">
                         <img src="images/线下1.jpg" alt="个人形象设计培训" class="w-full h-full object-cover">
                     </div>
@@ -348,7 +359,7 @@
                     </div>
                 </div>
                 <!-- 教学展示 2 -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="md:grid md:grid-cols-2 md:gap-8 md:items-center space-y-6 md:space-y-0">
                     <div class="order-2 md:order-1">
                         <h4 class="text-xl font-bold text-white mb-4">审美提升课程</h4>
                         <p class="text-gray-300 leading-relaxed mb-4">面向专业化妆师和需求者的美学提升课程，涵盖色彩理论、化妆技巧、时尚趋势等内容，提升学员的个人审美水平。</p>
@@ -435,14 +446,23 @@
             html.classList.remove('dark');
         }
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuModal = document.getElementById('mobile-menu-modal');
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenuModal.classList.remove('hidden');
+            mobileMenuModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
         });
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
+        
+        function closeMobileMenu() {
+            mobileMenuModal.classList.add('hidden');
+            mobileMenuModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        
+        mobileMenuModal.addEventListener('click', (e) => {
+            if (e.target === mobileMenuModal) {
+                closeMobileMenu();
+            }
         });
         
         // 服务类型下拉菜单处理
@@ -522,7 +542,7 @@
                     b.classList.remove('active');
                     b.classList.add('bg-black', 'text-white', 'dark:bg-white', 'dark:text-black');
                 });
-                btn.classList.add('active', 'bg-gray-300', 'text-black', 'dark:bg-gray-800', 'dark:text-white');
+                btn.classList.add('active', 'bg-gray-300', 'text-black', 'dark:bg-white', 'dark:text-black');
                 const filter = btn.getAttribute('data-filter');
                 galleryItems.forEach(item => {
                     if (item.classList.contains(filter)) {
@@ -547,7 +567,7 @@
             link.addEventListener('click', () => {
                 // 重置筛选按钮状态
                 filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-gray-300', 'text-black', 'dark:bg-gray-800', 'dark:text-white');
+                    b.classList.remove('active', 'bg-gray-300', 'text-black', 'dark:bg-white', 'dark:text-black');
                     b.classList.add('bg-black', 'text-white', 'dark:bg-white', 'dark:text-black');
                 });
                 // 显示所有作品
@@ -567,6 +587,7 @@
             const scrollAmount = 300; // 每次滚动的距离
             gallery.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
         }
+        
         function openLightbox(element) {
             const img = element.querySelector('img');
             const lightbox = document.getElementById('lightbox');
@@ -577,6 +598,108 @@
             lightbox.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        function playVideo(element) {
+            // 检查点击的是哪个卡片
+            const title = element.querySelector('h3').textContent;
+            if (title === '线上') {
+                // 显示线上弹出页面
+                const tutorialModal = document.getElementById('tutorial-modal');
+                tutorialModal.classList.remove('hidden');
+                tutorialModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            } else if (title === '线下') {
+                // 显示线下弹出页面
+                const teachingModal = document.getElementById('teaching-modal');
+                teachingModal.classList.remove('hidden');
+                teachingModal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+        
+        // 关闭线上弹出页面
+        function closeTutorial() {
+            const tutorialModal = document.getElementById('tutorial-modal');
+            tutorialModal.classList.add('hidden');
+            tutorialModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        
+        // 关闭线下弹出页面
+        function closeTeaching() {
+            const teachingModal = document.getElementById('teaching-modal');
+            teachingModal.classList.add('hidden');
+            teachingModal.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        
+        // 初始化画廊指示器
+        function initGalleryIndicators() {
+            const gallery = document.getElementById('gallery-scroll');
+            const indicatorsContainer = document.getElementById('gallery-indicators');
+            const items = gallery.querySelectorAll('.gallery-item');
+            
+            // 清空现有指示器
+            indicatorsContainer.innerHTML = '';
+            
+            // 生成小圆点，最多8个
+            const maxIndicators = 8;
+            const itemCount = Math.min(items.length, maxIndicators);
+            
+            for (let i = 0; i < itemCount; i++) {
+                const indicator = document.createElement('div');
+                indicator.className = 'w-2 h-2 rounded-full bg-gray-300 dark:bg-gray-700 cursor-pointer transition-all duration-300';
+                if (i === 0) {
+                    indicator.classList.add('bg-black', 'dark:bg-white', 'w-6');
+                }
+                indicator.addEventListener('click', () => {
+                    items[i].scrollIntoView({ behavior: 'smooth', inline: 'start' });
+                });
+                indicatorsContainer.appendChild(indicator);
+            }
+            
+            // 监听滚动事件更新指示器
+            gallery.addEventListener('scroll', updateIndicators);
+        }
+        
+        // 更新指示器状态
+        function updateIndicators() {
+            const gallery = document.getElementById('gallery-scroll');
+            const indicators = document.querySelectorAll('#gallery-indicators > div');
+            const items = gallery.querySelectorAll('.gallery-item');
+            
+            items.forEach((item, index) => {
+                if (index < indicators.length) {
+                    const rect = item.getBoundingClientRect();
+                    const galleryRect = gallery.getBoundingClientRect();
+                    
+                    // 检查item是否在可视区域内
+                    if (rect.left >= galleryRect.left && rect.right <= galleryRect.right) {
+                        // 激活当前指示器
+                        indicators.forEach((indicator, i) => {
+                            if (i === index) {
+                                indicator.classList.add('bg-black', 'dark:bg-white', 'w-6');
+                                indicator.classList.remove('bg-gray-300', 'dark:bg-gray-700', 'w-2');
+                            } else {
+                                indicator.classList.remove('bg-black', 'dark:bg-white', 'w-6');
+                                indicator.classList.add('bg-gray-300', 'dark:bg-gray-700', 'w-2');
+                            }
+                        });
+                    }
+                }
+            });
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 其他初始化代码...
+            initGalleryIndicators();
+        });
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.add('hidden');
